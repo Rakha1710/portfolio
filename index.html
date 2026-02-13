@@ -4,128 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>portfolio · R.ZN</title>
-  <!-- Tailwind CDN (v3) + Inter + Space Grotesk -->
+  <!-- Tailwind CDN (v3) + Inter + Space Grotesk + subtle Clash Display vibe via fallback -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Custom styles */
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .font-space {
-      font-family: 'Space Grotesk', monospace;
-    }
-    
-    /* Sticky nav with blur */
-    .sticky-nav {
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(38, 38, 38, 0.5);
-    }
-    
-    /* Hero giant text */
-    .hero-giant {
-      font-size: clamp(3rem, 15vw, 8rem);
-      line-height: 0.9;
-    }
-    
-    /* Section title */
-    .section-title {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    
-    /* Link underline effect */
-    .link-underline {
-      position: relative;
-    }
-    
-    .link-underline::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: currentColor;
-      transition: width 0.3s ease;
-    }
-    
-    .link-underline:hover::after {
-      width: 100%;
-    }
-    
-    .indigo-underline::after {
-      background: #818cf8;
-    }
-    
-    /* Input clean style */
-    .input-clean {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #333;
-      outline: none;
-      padding: 0.5rem 0;
-    }
-    
-    .input-clean:focus {
-      border-bottom-color: #a78bfa;
-    }
-    
-    /* Card hover */
-    .card-hover {
-      transition: all 0.3s ease;
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-5px);
-      border-color: #a78bfa;
-    }
-    
-    /* Fade up animation */
-    .fade-up {
-      animation: fadeUp 0.8s ease forwards;
-      opacity: 0;
-    }
-    
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    /* Mobile menu styles - FIXED */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #262626;
-      transition: all 0.3s ease;
-    }
-    
-    .mobile-menu.open {
-      display: flex;
-    }
-    
-    @media (max-width: 768px) {
-      .mobile-menu.open {
-        display: flex;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-black text-white antialiased selection:bg-purple-400/30 selection:text-white">
 
-  <!-- ===== PERSISTENT NAVIGATION ===== -->
+  <!-- ===== PERSISTENT NAVIGATION (sticky, blur, hamburger) ===== -->
   <nav class="sticky top-0 z-50 w-full sticky-nav text-white py-5 px-6 md:px-12 flex justify-between items-center">
     <div class="text-2xl md:text-3xl font-black tracking-tighter font-space">
       <span class="text-purple-400">[</span> R<span class="text-indigo-500">.</span>ZN <span class="text-purple-400">]</span>
@@ -139,23 +26,21 @@
     </div>
     
     <!-- mobile hamburger button -->
-    <button id="menuBtn" class="block md:hidden text-white focus:outline-none text-3xl leading-none z-50">
-      <span id="menuIcon" class="text-purple-400 text-4xl">≡</span>
+    <button id="menuBtn" class="block md:hidden text-white focus:outline-none text-3xl leading-none">
+      <span class="text-purple-400 text-4xl">≡</span>
     </button>
     
-    <!-- mobile dropdown menu - FIXED -->
-    <div id="mobileMenu" class="mobile-menu absolute top-full left-0 w-full p-8 flex-col space-y-6 text-2xl border-t border-neutral-800 md:hidden">
-      <a href="#index-page" class="hover:text-purple-400 transition font-space font-bold block">HOME</a>
-      <a href="portfolio.html" class="hover:text-indigo-400 transition font-space font-bold block">PORTFOLIO</a>
-      <a href="#contact" class="hover:text-purple-400 transition font-space font-bold block">CONTACT</a>
+    <!-- mobile dropdown menu -->
+    <div id="mobileMenu" class="mobile-menu absolute top-full left-0 w-full p-8 flex flex-col space-y-6 text-2xl border-t border-neutral-800 menu-closed md:hidden">
+      <a href="#index-page" class="hover:text-purple-400 transition font-space font-bold">HOME</a>
+      <a href="portfolio.html" class="hover:text-indigo-400 transition font-space font-bold">PORTFOLIO</a>
+      <a href="contact.html" class="hover:text-purple-400 transition font-space font-bold">CONTACT</a>
     </div>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main id="index-page" class="bg-black">
     
-    <!-- 1️⃣ HERO SECTION -->
-    <section class="min-h-screen flex items-center px-6 md:px-16 lg:px-20 pt-0 md:pt-0 relative">
+    <section class="min-h-screen flex items-center px-6 md:px-16 lg:px-20 whitespace-lux pt-0 md:pt-0">
       <div class="w-full fade-up" style="animation-delay: 0.1s;">
         <h1 class="hero-giant font-black leading-[0.85] tracking-tighter text-white max-w-6xl">
           Still Learning.<br/>
@@ -163,28 +48,28 @@
           <span class="text-purple-400">Building.</span>
         </h1>
         <p class="text-gray-400 text-lg md:text-xl max-w-2xl mt-10 md:mt-12 leading-relaxed">
-          Grade 11 RPL student passionate about coding & design — building real projects while learning the craft.
+          Digital architect with a brutalist touch — crafting immersive, high-end interfaces that breathe.
         </p>
         <!-- CTA -->
         <div class="flex flex-wrap gap-6 mt-12 md:mt-16">
           <a href="portfolio.html" class="group relative px-8 py-4 bg-purple-400/10 border border-purple-400/60 text-purple-400 font-semibold text-lg tracking-wide hover:bg-purple-400 hover:text-black transition-all duration-300 scale-100 hover:scale-105 backdrop-blur-sm">
             VIEW PORTFOLIO
           </a>
-          <a href="#contact" class="group relative px-8 py-4 border border-white/30 text-white font-semibold text-lg tracking-wide hover:border-indigo-400 hover:text-indigo-300 transition-all duration-300 scale-100 hover:scale-105">
+          <a href="contact.html" class="group relative px-8 py-4 border border-white/30 text-white font-semibold text-lg tracking-wide hover:border-indigo-400 hover:text-indigo-300 transition-all duration-300 scale-100 hover:scale-105">
             CONTACT ME
           </a>
         </div>
-        <!-- scroll indicator -->
+        <!-- subtle grainy / minimal brutalist micro -->
         <div class="absolute bottom-10 left-6 text-xs text-neutral-700 hidden md:block">—— SCROLL ——</div>
       </div>
     </section>
 
-    <!-- 2️⃣ ABOUT ME -->
+    <!-- 2️⃣ ABOUT ME (2 column: text + grayscale portrait) -->
     <section class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60">
       <div class="max-w-7xl mx-auto">
         <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Architecture</span>
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 mt-6">
-          <!-- left column -->
+          <!-- left: oversized about title + description -->
           <div class="fade-up">
             <h2 class="section-title text-white mb-8">
               About<br/>Me<span class="text-indigo-500">.</span>
@@ -194,27 +79,30 @@
                 I'm Rakha Zuhdi Naufal — <span class="text-purple-400 font-medium">a web developer</span> & UI/UX designer. Currently a Grade 11 student exploring the art of responsive systems and thoughtful digital design.  
               </p>
               <p class="font-light">
-                I'm learning how structure meets aesthetics — building clean interfaces, experimenting with layout systems, and understanding how users interact with modern web experiences. <span class="text-indigo-400">Every project is a step forward. Every mistake is part of the refinement</span>. I believe good design isn't loud — it's intentional.
+                I’m learning how structure meets aesthetics — building clean interfaces, experimenting with layout systems, and understanding how users interact with modern web experiences. <span class="text-indigo-400">Every project is a step forward. Every mistake is part of the refinement</span>. I believe good design isn’t loud — it’s intentional.
               </p>
             </div>
-            <!-- highlight block -->
+            <!-- highlight accent block -->
             <div class="mt-10 border-l-4 border-purple-400 pl-6 text-gray-400 italic text-xl font-space">
-              "Learning. Building. Evolving."
+              “Learning. Building. Evolving.”
             </div>
           </div>
-          <!-- right column: portrait -->
+          <!-- right: grayscale portrait, modern brutalist edge -->
           <div class="relative fade-up" style="animation-delay: 0.2s;">
             <div class="aspect-[4/5] w-full bg-gradient-to-br from-neutral-800 to-neutral-950 overflow-hidden">
-              <img src="./img/rakha.jpeg" alt="Rakha Zuhdi Naufal portrait" class="w-full h-full object-cover grayscale brightness-[0.65] contrast-[1.2]">
+              <!-- portrait placeholder — grayscale, high contrast, aesthetic -->
+              <img src="./img/rakha.jpeg"
+                   alt="grayscale portrait viktor r" 
+                   class="w-full h-full object-cover grayscale brightness-[0.65] contrast-[1.2]">
             </div>
-            <!-- decorative frame -->
+            <!-- brutalist frame -->
             <div class="absolute -bottom-5 -right-5 w-32 h-32 border border-purple-400/40 -z-5 hidden lg:block"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3️⃣ CORE EXPERTISE -->
+    <!-- 3️⃣ CORE EXPERTISE (Skills) — grid 3 kolom dengan border, hover -->
     <section class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60 bg-black/95">
       <div class="max-w-7xl mx-auto">
         <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Discipline</span>
@@ -241,20 +129,20 @@
             <h3 class="text-2xl font-bold text-white mb-3">UI/UX<br/>Architecture</h3>
             <p class="text-gray-400 text-sm leading-relaxed">Brutalist layouts, high-density typography, emotional pacing.</p>
           </div>
+          
         </div>
       </div>
     </section>
   </main>
 
-  <!-- 4️⃣ CONTACT SECTION -->
   <section id="contact" class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60 bg-black">
     <div class="max-w-3xl mx-auto text-center fade-up">
       <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Reach out</span>
       <h2 class="section-title text-white mt-4 mb-10 leading-[1.1]">
-        Let's start Project<br/><span class="text-purple-400">Together?</span>
+        Let’s start Project<br/><span class="text-purple-400">Together?.</span>
       </h2>
       
-      <!-- form -->
+      <!-- minimal form -->
       <form class="w-full space-y-12 mt-20 text-left">
         <div>
           <label class="text-gray-400 text-sm uppercase tracking-wider">Full name</label>
@@ -275,19 +163,15 @@
         </div>
       </form>
       
-      <!-- social links -->
+      <!-- social links minimal, elegant -->
       <div class="flex justify-center gap-10 mt-24 text-lg">
-        <a href="https://www.instagram.com/rakhaa_aa2?igsh=MWozMW94anhjb3ExYQ==" class="text-gray-400 hover:text-purple-400 transition link-underline text-base uppercase tracking-wider" target="_blank">
-          <i class="fa-brands fa-instagram text-4xl"></i>
-        </a>
-        <a href="#" class="text-gray-400 hover:text-indigo-400 transition link-underline indigo-underline text-base uppercase tracking-wider" target="_blank">
-          <i class="fa-brands fa-github text-4xl"></i>
-        </a>
+        <a href="https://www.instagram.com/rakhaa_aa2?igsh=MWozMW94anhjb3ExYQ==" class="text-gray-400 hover:text-purple-400 transition link-underline text-base uppercase tracking-wider"><i class="fa-brands text-4xl fa-instagram"></i></a>
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition link-underline indigo-underline text-base uppercase tracking-wider"><i class="text-4xl fa-brands fa-github"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="border-t border-neutral-800 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
     <div>© 2026 R Zuhdi Naufal — portfolio</div>
     <div class="flex space-x-6 mt-3 md:mt-0">
@@ -296,55 +180,23 @@
     </div>
   </footer>
 
-  <!-- JavaScript for mobile menu - FIXED -->
+  <!-- mobile hamburger script -->
   <script>
     (function() {
       const btn = document.getElementById('menuBtn');
       const menu = document.getElementById('mobileMenu');
-      const menuIcon = document.getElementById('menuIcon');
-      
       if (btn && menu) {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
-          e.stopPropagation();
-          
-          // Toggle menu
-          menu.classList.toggle('open');
-          
-          // Change icon (optional: bisa ganti dengan X saat open)
-          if (menu.classList.contains('open')) {
-            menuIcon.textContent = '✕';
-          } else {
-            menuIcon.textContent = '≡';
-          }
-        });
-        
-        // Close menu when clicking on a link
-        const menuLinks = menu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            menu.classList.remove('open');
-            menuIcon.textContent = '≡';
-          });
-        });
-        
-        // Close menu when clicking outside (optional)
-        document.addEventListener('click', function(event) {
-          if (!menu.contains(event.target) && !btn.contains(event.target) && menu.classList.contains('open')) {
-            menu.classList.remove('open');
-            menuIcon.textContent = '≡';
-          }
+          menu.classList.toggle('menu-closed');
         });
       }
-      
-      // Smooth scroll for anchor links
+      // subtle smooth scroll for all anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
           const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
       });
     })();
