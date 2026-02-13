@@ -8,6 +8,120 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .font-space {
+      font-family: 'Space Grotesk', monospace;
+    }
+    
+    /* Sticky nav with blur */
+    .sticky-nav {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(38, 38, 38, 0.5);
+    }
+    
+    /* Hero giant text */
+    .hero-giant {
+      font-size: clamp(3rem, 15vw, 8rem);
+      line-height: 0.9;
+    }
+    
+    /* Section title */
+    .section-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Link underline effect */
+    .link-underline {
+      position: relative;
+    }
+    
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+    
+    .link-underline:hover::after {
+      width: 100%;
+    }
+    
+    .indigo-underline::after {
+      background: #818cf8;
+    }
+    
+    /* Input clean style */
+    .input-clean {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #333;
+      outline: none;
+      padding: 0.5rem 0;
+    }
+    
+    .input-clean:focus {
+      border-bottom-color: #a78bfa;
+    }
+    
+    /* Card hover */
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      border-color: #a78bfa;
+    }
+    
+    /* Fade up animation */
+    .fade-up {
+      animation: fadeUp 0.8s ease forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Mobile menu styles - FIXED */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #262626;
+      transition: all 0.3s ease;
+    }
+    
+    .mobile-menu.open {
+      display: flex;
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu.open {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body class="bg-black text-white antialiased selection:bg-purple-400/30 selection:text-white">
 
