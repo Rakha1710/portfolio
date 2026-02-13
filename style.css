@@ -1,0 +1,123 @@
+/* custom brutalist/typography edge — mimics Clash Display weight & cinematic tracking */
+    body {
+      font-family: 'Inter', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      background: #0a0a0a; /* neutral-950 base */
+      scroll-behavior: smooth;
+    }
+    .font-space { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+    /* oversized headings with brutalist kick */
+    .hero-giant {
+      font-size: clamp(2.8rem, 14vw, 7rem);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -0.025em;
+    }
+    .section-title {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .subtitle-accent {
+      color: #fbbf24; /* purple-400 */
+    }
+    /* accent second option: indigo-500 — we use both, per design */
+    .accent-indigo {
+      color: #6366f1;
+    }
+    /* smooth transitions */
+    .card-hover {
+      transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), background 0.2s ease, border-color 0.2s;
+    }
+    .card-hover:hover {
+      background: #171717; /* neutral-900 */
+      border-color: #404040; /* neutral-700 */
+    }
+    /* image zoom container */
+    .img-zoom {
+      overflow: hidden;
+    }
+    .img-zoom img {
+      transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), filter 0.4s ease;
+    }
+    .img-zoom:hover img {
+      transform: scale(1.06);
+      filter: grayscale(0.2) brightness(0.7);
+    }
+    /* custom underline grow animation */
+    .link-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .link-underline::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background: #fbbf24; /* purple */
+      transition: width 0.25s ease-out;
+    }
+    .link-underline:hover::after {
+      width: 100%;
+    }
+    .indigo-underline::after {
+      background: #6366f1;
+    }
+    /* fade + slide-up on scroll (simple aos simulation) */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.7s ease-out forwards;
+    }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* navbar blur */
+    .sticky-nav {
+      backdrop-filter: blur(16px) saturate(180%);
+      background: rgba(10, 10, 10, 0.7);
+      border-bottom: 1px solid #262626;
+    }
+    /* form border bottom accent */
+    .input-clean {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #404040;
+      border-radius: 0;
+      padding: 0.75rem 0.25rem;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .input-clean:focus {
+      border-bottom-color: #fbbf24;
+      outline: none;
+      box-shadow: 0 6px 8px -8px #fbbf24;
+    }
+    /* mobile hamburger */
+    .mobile-menu {
+      transition: all 0.3s ease;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+    }
+    .menu-closed {
+      display: none;
+    }
+    /* cursor modern minimal */
+    * {
+      cursor: default;
+    }
+    button, a, [role="button"] {
+      cursor: pointer;
+    }
+    /* white spacing luxury */
+    .whitespace-lux {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+    @media (min-width: 768px) {
+      .whitespace-lux {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+    }

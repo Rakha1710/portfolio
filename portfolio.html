@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dark portfolio · brutalist elegance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white antialiased selection:bg-purple-400/30 selection:text-white">
+  
+  <!-- ========== PAGE 2: PORTFOLIO.HTML ========== -->
+    <!-- Selected Work Section (grid 2 kolom, card hover zoom) -->
+    <div id="portfolio-page" style="display: block;">
+      <!-- note: this is hidden when index is active but we place it inline; all pages are in 1 file, but we show all three pages stacked? based on "3 halaman", we present each page sequentially with ID. but user can navigate via navbar (same file) – fine. -->
+      <section class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60 bg-black" id="selected-work">
+        <div class="max-w-7xl mx-auto">
+          <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Portfolio</span>
+          <h2 class="section-title text-white mb-16 md:mb-20">
+            Selected <span class="text-purple-500">Projects</span>
+          </h2>
+          
+          <!-- grid 2 column desktop, 1 column mobile -->
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <!-- project 1 -->
+            <div class="group fade-up">
+              <div class="img-zoom w-full bg-neutral-900 aspect-[4/3] mb-6 border border-neutral-800">
+                <img src="./img/eglobe.png" 
+                     alt="project synapse" class="w-full h-full object-cover grayscale brightness-75">
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white">E GLOBE</h3>
+                  <p class="text-gray-400 text-base mt-2 max-w-md">Learning app mobile.</p>
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="text-xs text-gray-500 border border-neutral-700 px-3 py-1">Figma</span>
+                    <span class="text-xs text-gray-500 border border-neutral-700 px-3 py-1">UI</span>
+                  </div>
+                </div>
+                <a href="#" class="text-purple-400 text-sm uppercase tracking-wider font-medium link-underline whitespace-nowrap ml-4">View →</a>
+              </div>
+            </div>
+            <!-- project 2 -->
+            <div class="group fade-up" style="animation-delay:0.1s;">
+              <div class="img-zoom w-full bg-neutral-900 aspect-[4/3] mb-6 border border-neutral-800">
+                <img src="./img/skybank.png"
+                     alt="atelier" class="w-full h-full object-cover grayscale contrast-125">
+              </div>
+              <div class="flex justify-between">
+                <div>
+                  <h3 class="text-3xl md:text-4xl font-bold tracking-tight text-white">SKYBANK</h3>
+                  <p class="text-gray-400 text-base mt-2 max-w-md">Mobile Bank Design.</p>
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="text-xs text-gray-500 border border-neutral-700 px-3 py-1">Figma</span>
+                    <span class="text-xs text-gray-500 border border-neutral-700 px-3 py-1">UI</span>
+                  </div>
+                </div>
+                <a href="#" class="text-indigo-400 text-sm uppercase tracking-wider font-medium link-underline indigo-underline whitespace-nowrap ml-4">View →</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-neutral-800 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
+    <div>© 2026 R Zuhdi Naufal — portfolio</div>
+    <div class="flex space-x-6 mt-3 md:mt-0">
+      <span class="tracking-widest">← →</span>
+      <span>ENTER</span>
+    </div>
+  </footer>
+</body>
+</html>
+
+

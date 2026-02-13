@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>dark portfolio · brutalist elegance</title>
+  <!-- Tailwind CDN (v3) + Inter + Space Grotesk + subtle Clash Display vibe via fallback -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-black text-white antialiased selection:bg-purple-400/30 selection:text-white">
+
+  <!-- ===== PERSISTENT NAVIGATION (sticky, blur, hamburger) ===== -->
+  <nav class="sticky top-0 z-50 w-full sticky-nav text-white py-5 px-6 md:px-12 flex justify-between items-center">
+    <div class="text-2xl md:text-3xl font-black tracking-tighter font-space">
+      <span class="text-purple-400">[</span> R<span class="text-indigo-500">.</span>ZN <span class="text-purple-400">]</span>
+    </div>
+    
+    <!-- desktop menu -->
+    <div class="hidden md:flex space-x-10 text-sm uppercase tracking-widest font-medium">
+      <a href="#index-page" class="link-underline hover:text-purple-400 transition">Home</a>
+      <a href="portfolio.html" class="link-underline indigo-underline hover:text-indigo-400 transition">Portfolio</a>
+      <a href="#contact" class="link-underline hover:text-purple-400 transition">Contact</a>
+    </div>
+    
+    <!-- mobile hamburger button -->
+    <button id="menuBtn" class="block md:hidden text-white focus:outline-none text-3xl leading-none">
+      <span class="text-purple-400 text-4xl">≡</span>
+    </button>
+    
+    <!-- mobile dropdown menu -->
+    <div id="mobileMenu" class="mobile-menu absolute top-full left-0 w-full p-8 flex flex-col space-y-6 text-2xl border-t border-neutral-800 menu-closed md:hidden">
+      <a href="#index-page" class="hover:text-purple-400 transition font-space font-bold">HOME</a>
+      <a href="portfolio.html" class="hover:text-indigo-400 transition font-space font-bold">PORTFOLIO</a>
+      <a href="contact.html" class="hover:text-purple-400 transition font-space font-bold">CONTACT</a>
+    </div>
+  </nav>
+
+  <main id="index-page" class="bg-black">
+    
+    <section class="min-h-screen flex items-center px-6 md:px-16 lg:px-20 whitespace-lux pt-0 md:pt-0">
+      <div class="w-full fade-up" style="animation-delay: 0.1s;">
+        <h1 class="hero-giant font-black leading-[0.85] tracking-tighter text-white max-w-6xl">
+          Still Learning.<br/>
+          Already<br/>
+          <span class="text-purple-400">Building.</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mt-10 md:mt-12 leading-relaxed">
+          Digital architect with a brutalist touch — crafting immersive, high-end interfaces that breathe.
+        </p>
+        <!-- CTA -->
+        <div class="flex flex-wrap gap-6 mt-12 md:mt-16">
+          <a href="portfolio.html" class="group relative px-8 py-4 bg-purple-400/10 border border-purple-400/60 text-purple-400 font-semibold text-lg tracking-wide hover:bg-purple-400 hover:text-black transition-all duration-300 scale-100 hover:scale-105 backdrop-blur-sm">
+            VIEW PORTFOLIO
+          </a>
+          <a href="contact.html" class="group relative px-8 py-4 border border-white/30 text-white font-semibold text-lg tracking-wide hover:border-indigo-400 hover:text-indigo-300 transition-all duration-300 scale-100 hover:scale-105">
+            CONTACT ME
+          </a>
+        </div>
+        <!-- subtle grainy / minimal brutalist micro -->
+        <div class="absolute bottom-10 left-6 text-xs text-neutral-700 hidden md:block">—— SCROLL ——</div>
+      </div>
+    </section>
+
+    <!-- 2️⃣ ABOUT ME (2 column: text + grayscale portrait) -->
+    <section class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60">
+      <div class="max-w-7xl mx-auto">
+        <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Architecture</span>
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 mt-6">
+          <!-- left: oversized about title + description -->
+          <div class="fade-up">
+            <h2 class="section-title text-white mb-8">
+              About<br/>Me<span class="text-indigo-500">.</span>
+            </h2>
+            <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <p class="font-light">
+                I'm Rakha Zuhdi Naufal — <span class="text-purple-400 font-medium">a web developer</span> & UI/UX designer. Currently a Grade 11 student exploring the art of responsive systems and thoughtful digital design.  
+              </p>
+              <p class="font-light">
+                I’m learning how structure meets aesthetics — building clean interfaces, experimenting with layout systems, and understanding how users interact with modern web experiences. <span class="text-indigo-400">Every project is a step forward. Every mistake is part of the refinement</span>. I believe good design isn’t loud — it’s intentional.
+              </p>
+            </div>
+            <!-- highlight accent block -->
+            <div class="mt-10 border-l-4 border-purple-400 pl-6 text-gray-400 italic text-xl font-space">
+              “Learning. Building. Evolving.”
+            </div>
+          </div>
+          <!-- right: grayscale portrait, modern brutalist edge -->
+          <div class="relative fade-up" style="animation-delay: 0.2s;">
+            <div class="aspect-[4/5] w-full bg-gradient-to-br from-neutral-800 to-neutral-950 overflow-hidden">
+              <!-- portrait placeholder — grayscale, high contrast, aesthetic -->
+              <img src="./img/rakha.jpeg"
+                   alt="grayscale portrait viktor r" 
+                   class="w-full h-full object-cover grayscale brightness-[0.65] contrast-[1.2]">
+            </div>
+            <!-- brutalist frame -->
+            <div class="absolute -bottom-5 -right-5 w-32 h-32 border border-purple-400/40 -z-5 hidden lg:block"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3️⃣ CORE EXPERTISE (Skills) — grid 3 kolom dengan border, hover -->
+    <section class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60 bg-black/95">
+      <div class="max-w-7xl mx-auto">
+        <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Discipline</span>
+        <h2 class="section-title text-white mb-16 md:mb-20">
+          Core <span class="text-purple-400">Expertise</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- skill card 1 -->
+          <div class="border border-neutral-800 p-8 card-hover transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-900/70 fade-up">
+            <div class="text-4xl mb-6 text-purple-400 font-black">01</div>
+            <h3 class="text-2xl font-bold text-white mb-3">Frontend<br/>Engineering</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">React, Vue, Tailwind — motion & micro-interactions with surgical precision.</p>
+          </div>
+          <!-- skill card 2 -->
+          <div class="border border-neutral-800 p-8 card-hover transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-900/70 fade-up" style="animation-delay:0.1s;">
+            <div class="text-4xl mb-6 text-indigo-400 font-black">02</div>
+            <h3 class="text-2xl font-bold text-white mb-3">Backend<br/>Systems</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Node.js, Python, serverless, headless CMS. Scalable & silent.</p>
+          </div>
+          <!-- skill card 3 -->
+          <div class="border border-neutral-800 p-8 card-hover transition-all duration-300 hover:border-neutral-600 hover:bg-neutral-900/70 fade-up" style="animation-delay:0.2s;">
+            <div class="text-4xl mb-6 text-purple-400 font-black">03</div>
+            <h3 class="text-2xl font-bold text-white mb-3">UI/UX<br/>Architecture</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Brutalist layouts, high-density typography, emotional pacing.</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="contact" class="px-6 md:px-16 lg:px-20 py-24 md:py-32 border-t border-neutral-800/60 bg-black">
+    <div class="max-w-3xl mx-auto text-center fade-up">
+      <span class="text-gray-500 text-sm tracking-[0.3em] uppercase">Reach out</span>
+      <h2 class="section-title text-white mt-4 mb-10 leading-[1.1]">
+        Let’s start Project<br/><span class="text-purple-400">Together?.</span>
+      </h2>
+      
+      <!-- minimal form -->
+      <form class="w-full space-y-12 mt-20 text-left">
+        <div>
+          <label class="text-gray-400 text-sm uppercase tracking-wider">Full name</label>
+          <input type="text" placeholder="Your Name ..." class="input-clean w-full text-white text-xl md:text-2xl placeholder:text-neutral-700 focus:border-purple-400 transition">
+        </div>
+        <div>
+          <label class="text-gray-400 text-sm uppercase tracking-wider">Email</label>
+          <input type="email" placeholder="hello@domain.com" class="input-clean w-full text-white text-xl md:text-2xl placeholder:text-neutral-700 focus:border-indigo-500 transition">
+        </div>
+        <div>
+          <label class="text-gray-400 text-sm uppercase tracking-wider">Message</label>
+          <textarea rows="2" placeholder="Tell me about your vision..." class="input-clean w-full text-white text-xl md:text-2xl placeholder:text-neutral-700 resize-none focus:border-purple-400"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="w-full py-5 bg-white/5 border border-white/20 text-white text-xl font-semibold tracking-wide hover:bg-purple-400 hover:text-black hover:border-purple-400 transition-all duration-300 scale-100 hover:scale-[1.02] backdrop-blur-sm">
+            Send message →
+          </button>
+        </div>
+      </form>
+      
+      <!-- social links minimal, elegant -->
+      <div class="flex justify-center gap-10 mt-24 text-lg">
+        <a href="https://www.instagram.com/rakhaa_aa2?igsh=MWozMW94anhjb3ExYQ==" class="text-gray-400 hover:text-purple-400 transition link-underline text-base uppercase tracking-wider"><i class="fa-brands text-4xl fa-instagram"></i></a>
+        <a href="#" class="text-gray-400 hover:text-indigo-400 transition link-underline indigo-underline text-base uppercase tracking-wider"><i class="text-4xl fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-neutral-800 py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs md:text-sm">
+    <div>© 2026 R Zuhdi Naufal — portfolio</div>
+    <div class="flex space-x-6 mt-3 md:mt-0">
+      <span class="tracking-widest">← →</span>
+      <span>ENTER</span>
+    </div>
+  </footer>
+
+  <!-- mobile hamburger script -->
+  <script>
+    (function() {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          menu.classList.toggle('menu-closed');
+        });
+      }
+      // subtle smooth scroll for all anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
