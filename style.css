@@ -121,3 +121,13 @@
         padding-bottom: 8rem;
       }
     }
+
+    .mobile-menu {
+      display: none; /* Default hidden */
+      flex-direction: column;
+    }
+
+    .mobile-menu.open {
+      display: flex; /* Show when open class added */
+    }
+
